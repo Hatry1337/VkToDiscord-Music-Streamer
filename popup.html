@@ -6,8 +6,17 @@
 		<script type="text/javascript" src="popup.js"></script>
 	</head>
 	<body>
-		<div class="center">
-			<input type="checkbox" checked="true">
+		<div class="outer">
+			<div class="content">
+				<div class="statebtn">
+					<span>Enable streaming</span>
+					<input id="statesw" type="checkbox" checked="true">
+				</div>
+				<div class="tokenhldr">
+					<input id="IToken" class="CInput"  type="text" placeholder="Discord Account Token">
+					<input id="updtoken" class="CButton" type="submit" name="savetoken" value="Save">
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

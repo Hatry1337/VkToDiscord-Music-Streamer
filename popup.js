@@ -1,10 +1,11 @@
 window.onload = function() {
    if(localStorage['req_send'] === "true"){
-		document.body.getElementsByClassName("center")[0].children[0].checked = true;
+		document.getElementById("statesw").checked = true;
 	}else{
-		document.body.getElementsByClassName("center")[0].children[0].checked = false;
+		document.getElementById("statesw").checked = false;
 	}
-	document.body.getElementsByClassName("center")[0].children[0].onclick = pognaliNahoy
+	document.getElementById("statesw").onclick = pognaliNahoy;
+	document.getElementById("updtoken").onclick = updateToken;
 };
 
 function pognaliNahoy(){
@@ -17,8 +18,14 @@ function pognaliNahoy(){
    		console.log(response);
     });
     if(localStorage['req_send'] === "true"){
-		document.body.getElementsByClassName("center")[0].children[0].checked = true;
+		document.getElementById("statesw").checked = true;
 	}else{
-		document.body.getElementsByClassName("center")[0].children[0].checked = false;
+		document.getElementById("statesw").checked = false;
 	}
+}
+function updateToken() {
+	var token = document.getElementById("IToken").value;
+	chrome.runtime.sendMessage(["vkms_updtoken", token], function (response) {
+   		console.log(response);
+    });
 }

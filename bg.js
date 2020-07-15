@@ -1,6 +1,7 @@
 window.vkms = {track:"Connecting...."}
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    console.log(message);
     if(message[0] === "vkms_msg"){
         window.vkms.track = message[1];
         window.vkms.paused = message[2];
@@ -20,15 +21,16 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
             Status.unset();
             sendResponse("ok");
         }
+    }else if(message[0] === "vkms_updtoken"){
+        localStorage['vkms_dtoken'] = message[1];
     }
 });
 
 var Status = {
-    authToken: "",
     request: () => {
         let req = new XMLHttpRequest();
         req.open("PATCH", "https://discordapp.com/api/v6/users/@me/settings", true);
-        req.setRequestHeader("authorization", Status.authToken);
+        req.setRequestHeader("authorization", localStorage['vkms_dtoken']);
         req.setRequestHeader("content-type", "application/json");
         return req;
     },
