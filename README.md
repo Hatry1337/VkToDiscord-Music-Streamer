@@ -14,3 +14,8 @@
   You must see something like that: <p>
   ![token](https://media.discordapp.net/attachments/612222713716801537/733110604201721866/unknown.png?width=436&height=676) <p>
   Authorization header it is your token! Enjoy!
+    
+## What will you get?
+  ![res1](https://media.discordapp.net/attachments/612222713716801537/733266232664391741/unknown.png) <p>
+  ![res2](https://media.discordapp.net/attachments/612222713716801537/733265727452348456/unknown.png) <p>
+  
