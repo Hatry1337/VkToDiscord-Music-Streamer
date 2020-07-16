@@ -1,5 +1,5 @@
 # VkToDiscord-Music-Streamer
-## How to use?
+## How to install?
   - Clone this repository to some place
   - Go to browser://extensions/ or chrome://extensions/
   - Turn on developer mode <p>
