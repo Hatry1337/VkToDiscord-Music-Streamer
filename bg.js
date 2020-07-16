@@ -1,7 +1,6 @@
 window.vkms = {track:"Connecting...."}
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    console.log(message);
     if(message[0] === "vkms_msg"){
         window.vkms.track = message[1];
         window.vkms.paused = message[2];
@@ -35,6 +34,9 @@ var Status = {
         return req;
     },
     set: (status) => {
+        if(status.length > 128){
+            status = status.substring(0, 125)+"...";
+        }
         Status.request().send('{"custom_status":{"text":"' + status + '", "emoji_name": "🎵"}}');
     },
     unset: () => {

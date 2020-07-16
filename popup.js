@@ -15,7 +15,6 @@ function pognaliNahoy(){
 		localStorage['req_send'] = "true";
 	}
 	chrome.runtime.sendMessage(["vkms_btncl", localStorage['req_send']], function (response) {
-   		console.log(response);
     });
     if(localStorage['req_send'] === "true"){
 		document.getElementById("statesw").checked = true;
@@ -26,6 +25,5 @@ function pognaliNahoy(){
 function updateToken() {
 	var token = document.getElementById("IToken").value;
 	chrome.runtime.sendMessage(["vkms_updtoken", token], function (response) {
-   		console.log(response);
     });
 }
